@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+<!--    注册bean-->
+    <bean id="userService" class="com.springtest.aop.demo01.UserServiceImpl"/>
+    <bean id="log" class="com.springtest.aop.log.log"/>
+    <bean id="afterLog" class="com.springtest.aop.log.afterLog"/>
+<!--&lt;!&ndash;    配置AOP&ndash;&gt;-->
+<!--    <aop:config>-->
+<!--&lt;!&ndash;        切入点 expression:表达式匹配要执行的方法&ndash;&gt;-->
+<!--        <aop:pointcut id="pointcut"-->
+<!--                      expression="execution(* com.springtest.aop.demo01.UserServiceImpl.*(..))"/>-->
+
+<!--        &lt;!&ndash;执行环绕; advice-ref执行方法 . pointcut-ref切入点&ndash;&gt;-->
+<!--        <aop:advisor advice-ref="log" pointcut-ref="pointcut"/>-->
+<!--        <aop:advisor advice-ref="afterLog" pointcut-ref="pointcut"/>-->
+
+<!--    </aop:config>-->
+<!--    注解实现-->
+    <bean id="annotationPointCut" class="com.springtest.aop.demo01.AnnotationPointCut"/>
+    <aop:aspectj-autoproxy/>
+</beans>
