@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+  ~ UserMapper.xml
+  ~ Copyright 2021 Qunhe Tech, all rights reserved.
+  ~ Qunhe PROPRIETARY/CONFIDENTIAL, any form of usage is subject to approval.
+  -->
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.springtest.mybatistest.dao.UserMapper">
+
+
+    <select id="selectUser" resultType="com.springtest.mybatistest.pojo.User">
+        select * from student;
+    </select>
+</mapper>
